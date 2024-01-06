@@ -1,21 +1,25 @@
-body{
+body {
     background-color: black;
     color: white;
 }
-.row{
-    height : 150px;
+
+.row {
+    height: 150px;
     width: 450px;
     display: flex;
 }
-.col-1,.col-2,.col-0{
+
+.col-1, .col-2, .col-0 {
     height: 94%;
     background-color: rgb(199, 192, 192);
     display: flex;
+    overflow: hidden;
     justify-content: center;
     width: 150px;
     border: 5px solid black;
 }
-#btn{
+
+#btn {
     margin-top: 20px;
     background-color: red;
     height: 3rem;
@@ -24,4 +28,15 @@ body{
     font-weight: 600;
     border: 2px solid red;
     border-radius: 30px;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    .row {
+        width: 100%;
+    }
+
+    .col-1, .col-2, .col-0 {
+        width: 100%;
+    }
 }
