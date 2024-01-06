@@ -1,7 +1,8 @@
 var term = 0;
 const pos = Array.from({ length: 3 }, () => Array(3).fill(-1));
 let gameWon = false;
-
+const audio =new Audio("ting.mp3");
+const victory = new Audio("victory.mp3");
 var row0 = document.getElementsByClassName("col-0");
 var row1 = document.getElementsByClassName("col-1");
 var row2 = document.getElementsByClassName("col-2");
@@ -26,7 +27,6 @@ function addimg(e) {
     if(gameWon){
         return;
     }
-    const audio =new Audio("ting.mp3");
     audio.play();
     var img = e.getElementsByTagName('img');
     img = img[0];
@@ -50,7 +50,6 @@ function insert(row,col ,e) {
             x.style.backgroundColor='red';
         }
         if (check()) {
-            const victory = new Audio("victory.mp3");
             x.style.backgroundColor='green';
             victory.play();
             gameWon = true;
